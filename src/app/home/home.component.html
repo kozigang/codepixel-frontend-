@@ -1,1 +1,21 @@
 <p>home works!</p>
+
+<!-- src/app/app.component.html -->
+
+<div *ngIf="errorMessage" class="error">
+    <p>{{ errorMessage }}</p>
+  </div>
+  
+  <div *ngIf="categories.length > 0">
+    <h2>Liste des Catégories</h2>
+    <ul>
+      <li *ngFor="let category of categories">
+        {{ category.title }}  <!-- Afficher le nom de la catégorie (ajuste selon ton modèle) -->
+      </li>
+    </ul>
+  </div>
+  
+  <div *ngIf="categories.length === 0 && !errorMessage">
+    <p>Aucune catégorie à afficher.</p>
+  </div>
+  
